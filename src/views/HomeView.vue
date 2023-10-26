@@ -35,18 +35,26 @@ export default {
   }
 
   .botoes {
-    display: grid;
-    grid-template-columns: repeat(2, 14rem);
+    display: flex;
+    justify-content: center;
+    column-gap: 4rem;
+    row-gap: 4rem;
+    flex-wrap: wrap;
   }
 
   button {
     cursor: pointer;
-    width: 100%;
-    width: 100%;
+    width: 14rem;
+    height: 14rem;
     background-color: #00A8E8;
     border-radius: 0.37rem;
     font-size: 3rem;
     font-weight: 700;
+  }
+
+  button:hover {
+    transition: 300ms;
+    background-color: #007EA7;
   }
 </style>
 
