@@ -4,19 +4,21 @@
         Escolha a sua posição
       </h1>
       <div class="botoes">
-        <button>Piloto</button>
-        <button>ATC</button>
+        <button class="botao" v-on:click="buttonPilot">Piloto</button>
+        <button class="botao" v-on:click="buttonATC">ATC</button>
       </div>
     </div>
 </template>
 
 <script>
-
-export default {
-  name: 'HomeView',
-  components: {
+  export default {
+    name: 'HomeView',
+    methods: {
+      buttonATC() {
+        this.$router.push({name: 'Categoria', params: 'ATC'})
+      }
+    }
   }
-}
 </script>
 
 <style>
@@ -42,7 +44,7 @@ export default {
     flex-wrap: wrap;
   }
 
-  button {
+  .botao {
     cursor: pointer;
     width: 14rem;
     height: 14rem;
@@ -52,7 +54,7 @@ export default {
     font-weight: 700;
   }
 
-  button:hover {
+  .botao:hover {
     transition: 300ms;
     background-color: #007EA7;
   }

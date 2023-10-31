@@ -1,14 +1,11 @@
 <template>
-  <nav v-if="paginaAtual != 'inicio'">
-    <router-link to="/" v-on:click="paginaInicial">Início</router-link>
-    <button v-on:click="voltar">
-      Voltar
-    </button>
-  </nav>
+  <navBar />
   <router-view/>
 </template>
 
 <script>
+  import navBar from './components/navBar.vue'
+
   export default {
     name: 'App',
     data() {
@@ -19,14 +16,10 @@
     methods: {
       voltar() {
         this.$router.go(-1)
-        if(this.$route.name == 'inicio') {
-          this.paginaAtual = 'inicio'
-        }
       },
-
-      paginaInicial() {
-        this.paginaAtual = 'inicio'
-      }
+    },
+    components: {
+      navBar
     }
   }
 </script>
